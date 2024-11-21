@@ -1,5 +1,4 @@
 # Spotify_analysis
-<<<<<<< HEAD
 
 ## Overview
 The **Spofity_analysis** project explores musical trends by analyzing streaming data from Spotify for three artists: **The National**, **Julia Wolf**, and **Bon Iver**. By utilizing R's data visualization tools, such as ggplot2, this analysis aims to uncover how musical attributes like **song duration** and **valence** evolve over time. The primary objective of the project is to identify stylistic shifts and patterns, giving insights into the progression of each artist's musical style and themes.
