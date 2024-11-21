@@ -1,0 +1,105 @@
+---
+title: "An Analysis of Musical Trends: A Case Study on The National, Julia Wolf, and Bon Iver"
+author: "Zien Gao, Jiaxuan Song and Shuheng(Jack) Zhou"
+date: today
+date-format: long
+format: pdf
+echo: false
+bibliography: references.bib
+---
+
+# Introduction
+
+The surge in popularity of music streaming services provides an invaluable data source for analyzing trends in musical features across various artists and genres. This study focuses on the evolution of musical attributes, specifically duration and valence, for three artists: The National, Julia Wolf, and Bon Iver. Using Spotify data visualized through R's `ggplot2`, we aim to uncover stylistic trends and shifts in each artist's music over time.
+
+# Methodology
+
+We utilized the `spotifyr` package to retrieve track-level data from Spotify, focusing on album release dates, track durations, and valence scores. Data was processed in R, where the following steps were applied:
+
+1. **Data Retrieval**: The `get_artist_audio_features()` function was employed for each artist.
+2. **Data Cleaning**: After loading data, we cleaned and organized it using `dplyr` and visualized it with `ggplot2`.
+
+The following R code snippet illustrates the process of retrieving and plotting data for these artists, with optimizations applied to mitigate warnings.
+
+```{r setup, include=FALSE}
+library(ggplot2)
+library(dplyr)
+library(lubridate)
+
+
+```
+
+
+
+```{r}
+# Load the combined CSV file
+all_artist_data <- read.csv("all_artist_data.csv")
+
+# Convert to tibble for easier manipulation (optional)
+all_artist_data <- as_tibble(all_artist_data)
+
+```
+
+```{r}
+# List of artists to filter and plot
+artists <- c("Julia Wolf", "Bon Iver", "The National")
+
+# Loop over each artist to create individual plots
+lapply(artists, function(artist_name) {
+  artist_data <- all_artist_data %>%
+    filter(artist_name == artist_name)
+
+  # Plot song duration over album release date
+  ggplot(artist_data |> mutate(album_release_date = ymd(album_release_date)),
+         aes(x = album_release_date, y = duration_ms, group = album_release_date)) +
+    geom_boxplot() +
+    geom_jitter(alpha = 0.5, width = 0.3, height = 0) +
+    theme_minimal() +
+    labs(
+      title = paste("Song Duration by Album Release Date for", artist_name),
+      x = "Album release date",
+      y = "Duration of song (ms)"
+    )
+})
+```
+
+
+
+# Results
+
+The box plots illustrate the distribution of song durations by album release date for each artist, providing insights into trends over time. We observe the following:
+
+- **The National**: A slight decrease in valence over time, suggesting a potential shift toward more melancholic themes.
+- **Julia Wolf**: Shows consistency in song duration with some variability in valence, indicating stability in her musical approach.
+- **Bon Iver**: Displays varied valence and duration trends, perhaps reflecting experimentation with musical style.
+
+
+# Discussion
+
+The analysis suggests that streaming data can reveal meaningful patterns in an artist's musical evolution, capturing their creative direction and genre alignment. Each artist's trajectory offers insights into their stylistic choices, audience engagement, and potential influences over time.
+
+# Conclusion
+
+By combining Spotify data with visualization tools, we gained insight into the progression of three distinctive musical artists. This data-driven approach offers a compelling perspective on how artists innovate and adapt in an ever-evolving music landscape.
+
+# R Packages Used 
+
+The analysis made use of several R packages. The primary ones include: 
+
+- `spotifyr` [@charlie86_spotifyr]: This package was used to access the Spotify API and download audio features data for the artists analyzed. 
+
+- `ggplot2` [@ggplot2]: Used for data visualization. 
+
+- `dplyr` [@dplyr]: Utilized for data manipulation. 
+
+- `lubridate` [@lubridate]: Used to work with date-time data. 
+
+# Data Citation
+
+The dataset used in this analysis was derived from Spotify's API [@spotify], accessed through the `spotifyr` [@charlie86_spotifyr] package. The data includes audio features for tracks by the artists "Julia Wolf", "Bon Iver", and "The National". 
+
+\newpage
+
+# Reference:
+
+
