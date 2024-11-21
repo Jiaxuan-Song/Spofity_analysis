@@ -1,8 +1,4 @@
 # Spotify_analysis
-<<<<<<< HEAD
-
-=======
->>>>>>> origin/main
 
 ## Overview
 
