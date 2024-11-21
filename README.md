@@ -1,4 +1,5 @@
 # Spotify_analysis
+<<<<<<< HEAD
 
 ## Overview
 The **Spofity_analysis** project explores musical trends by analyzing streaming data from Spotify for three artists: **The National**, **Julia Wolf**, and **Bon Iver**. By utilizing R's data visualization tools, such as ggplot2, this analysis aims to uncover how musical attributes like **song duration** and **valence** evolve over time. The primary objective of the project is to identify stylistic shifts and patterns, giving insights into the progression of each artist's musical style and themes.
@@ -21,3 +22,5 @@ The repository is organized into the following folders:
 
 ## LLM Usage
 The project includes a folder **llm_usage**, which documents how large language models (LLMs) can support data analysis workflows. The content here explains how LLMs were used to enhance code-writing efficiency using ChatGPT-4o, documentation, and problem-solving throughout the project. This serves as a reference for employing LLMs in practical data projects, highlighting how they can assist in automating repetitive tasks or providing context-aware suggestions for coding and data analysis.
+=======
+>>>>>>> origin/main
