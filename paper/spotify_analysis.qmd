@@ -1,6 +1,7 @@
 ---
 title: "An Analysis of Musical Trends: A Case Study on The National, Julia Wolf, and Bon Iver"
 author: "Zien Gao, Jiaxuan Song and Shuheng(Jack) Zhou"
+thanks: "The GitHub Repository containing all data, R code, and other files used in this project is located here: <https://github.com/Jiaxuan-Song/Spofity_analysis.git>"
 date: today
 date-format: long
 format: pdf
