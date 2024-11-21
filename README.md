@@ -11,7 +11,7 @@ The data is sourced using the Spotify API through the **spotifyr** package and f
 The repository is organized into the following folders:
 
 - **llm_usage**: Contains notes on large language models and their application in data analysis.
-  -**usage.txt**: Documentation on the use of language models in this project.
+  - **usage.txt**: Documentation on the use of language models in this project.
 - **paper**: Includes the main analysis and related files.
   - **all_artist_data.csv**: Data file containing track-level features for the selected artists.
   - **references.bib**: Bibliographic references used in the project.
